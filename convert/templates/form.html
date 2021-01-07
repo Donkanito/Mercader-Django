@@ -1,0 +1,38 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercader</title>
+</head>
+<center>
+<h1>Mercader Galactico</h1>
+<style>
+  body{
+    background-image: url("https://blenderartists.org/uploads/default/original/4X/7/e/2/7e2d7bea4ac21388c4a96e1371f375c4ce00094b.jpg");
+    
+  }
+  h3{
+    color:burlywood;
+  }
+  h1{
+    color:aliceblue;
+  }
+</style>
+
+
+  <body>
+    <form method="post">
+      {% csrf_token %}
+      {{form|crispy}}
+      <button type="submit">Submit</button>
+    </form>
+    <h3>
+      {% for lineas in resultado%}
+      <p>{{lineas}}</p>
+      {% endfor %} 
+    </h3>
+  </body>
+</center>
+</html>
